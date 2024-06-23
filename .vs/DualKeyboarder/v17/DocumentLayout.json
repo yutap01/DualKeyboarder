@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yutap\\Documents\\Projects\\DualKeyboarder\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F37C0C0A-5AAD-4BF3-84AB-79F223F899CD}|DualKeyboarder\\DualKeyboarder.csproj|c:\\users\\yutap\\documents\\projects\\dualkeyboarder\\dualkeyboarder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37C0C0A-5AAD-4BF3-84AB-79F223F899CD}|DualKeyboarder\\DualKeyboarder.csproj|solutionrelative:dualkeyboarder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37C0C0A-5AAD-4BF3-84AB-79F223F899CD}|DualKeyboarder\\DualKeyboarder.csproj|c:\\users\\yutap\\documents\\projects\\dualkeyboarder\\dualkeyboarder\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37C0C0A-5AAD-4BF3-84AB-79F223F899CD}|DualKeyboarder\\DualKeyboarder.csproj|solutionrelative:dualkeyboarder\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37C0C0A-5AAD-4BF3-84AB-79F223F899CD}|DualKeyboarder\\DualKeyboarder.csproj|c:\\users\\yutap\\documents\\projects\\dualkeyboarder\\dualkeyboarder\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F37C0C0A-5AAD-4BF3-84AB-79F223F899CD}|DualKeyboarder\\DualKeyboarder.csproj|solutionrelative:dualkeyboarder\\forms\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F37C0C0A-5AAD-4BF3-84AB-79F223F899CD}|DualKeyboarder\\DualKeyboarder.csproj|c:\\users\\yutap\\documents\\projects\\dualkeyboarder\\dualkeyboarder\\define\\define.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37C0C0A-5AAD-4BF3-84AB-79F223F899CD}|DualKeyboarder\\DualKeyboarder.csproj|solutionrelative:dualkeyboarder\\define\\define.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\yutap\\Documents\\Projects\\DualKeyboarder\\DualKeyboarder\\Forms\\Form1.cs",
+              "RelativeDocumentMoniker": "DualKeyboarder\\Forms\\Form1.cs",
+              "ToolTip": "C:\\Users\\yutap\\Documents\\Projects\\DualKeyboarder\\DualKeyboarder\\Forms\\Form1.cs",
+              "RelativeToolTip": "DualKeyboarder\\Forms\\Form1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T05:19:04.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Define.cs",
+              "DocumentMoniker": "C:\\Users\\yutap\\Documents\\Projects\\DualKeyboarder\\DualKeyboarder\\Define\\Define.cs",
+              "RelativeDocumentMoniker": "DualKeyboarder\\Define\\Define.cs",
+              "ToolTip": "C:\\Users\\yutap\\Documents\\Projects\\DualKeyboarder\\DualKeyboarder\\Define\\Define.cs",
+              "RelativeToolTip": "DualKeyboarder\\Define\\Define.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T05:13:46.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\yutap\\Documents\\Projects\\DualKeyboarder\\DualKeyboarder\\Program.cs",
+              "RelativeDocumentMoniker": "DualKeyboarder\\Program.cs",
+              "ToolTip": "C:\\Users\\yutap\\Documents\\Projects\\DualKeyboarder\\DualKeyboarder\\Program.cs",
+              "RelativeToolTip": "DualKeyboarder\\Program.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAlwDcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T05:10:47.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "DocumentMoniker": "C:\\Users\\yutap\\Documents\\Projects\\DualKeyboarder\\DualKeyboarder\\Forms\\Form1.cs",
+              "RelativeDocumentMoniker": "DualKeyboarder\\Forms\\Form1.cs",
+              "ToolTip": "C:\\Users\\yutap\\Documents\\Projects\\DualKeyboarder\\DualKeyboarder\\Forms\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "RelativeToolTip": "DualKeyboarder\\Forms\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T04:54:23.221Z",
+              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

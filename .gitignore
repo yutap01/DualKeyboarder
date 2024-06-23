@@ -1,0 +1,8 @@
+/DualKeyboarder/.vs/
+/DualKeyboarder/.vs
+/.vs/DualKeyboarder/DesignTimeBuild/.dtbcache.v2
+/DualKeyboarder/packages/
+/DualKeyboarder/obj/
+/DualKeyboarder/bin/
+*.suo
+*.vsidx
