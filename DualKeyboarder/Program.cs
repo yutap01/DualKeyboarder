@@ -1,5 +1,9 @@
+using DualKeyboarder.Forms;
 using DualKeyboarder.Guardian;
 using DualKeyboarder.Utilities;
+using DualKeyboarder.Window;
+using Linearstar.Windows.RawInput;
+using System.Diagnostics;
 using static DualKeyboarder.Define.Define;
 
 namespace DualKeyboarder
@@ -15,19 +19,19 @@ namespace DualKeyboarder
 
         #endregion
 
-
         /// <summary>
         /// メインエントリポイント
         /// </summary>
         [STAThread]
         static void Main()
         {
-            Log.Error("リリーステスト");
-
             Log.Trace("多重起動チェック");
             if (MultiInvocationGuardian.IsAlreadyRunning())
             {
+                // TODO:削除
                 MessageBox.Show(errorMessageOfMultipleInvocation);
+
+                // TODO:FunctionFormの表示
                 return;
             }
 
@@ -36,17 +40,12 @@ namespace DualKeyboarder
                 Log.Trace("アプリケーション設定の初期化");
                 ApplicationConfiguration.Initialize();
 
-                Log.Trace("メインウィンドウの生成");
-                var mainWindow = new Form1();
-
                 Log.Trace("アプリケーションの初期化");
-                Initialize(mainWindow);
-
-                Log.Trace("アプリケーションをタスクトレイへ常駐させる");
-                ResidesTaskTray(mainWindow);
+                Initialize();
 
                 Log.Trace("アプリケーションの実行");
-                Application.Run(mainWindow);
+                new KeyboardSettingForm().ShowDialog();
+                Application.Run();
             } finally
             {
                 Log.Trace("後処理");
@@ -54,60 +53,33 @@ namespace DualKeyboarder
             }
         }
 
+
         /// <summary>
         /// 初期化
         /// </summary>
         /// <param name="mainWindow">メインウィンドウ</param>
-        private static void Initialize(Form1 mainWindow)
+        private static void Initialize()
         {
             Log.IndentUp();
 
             // TODO:設定の読み込み
 
-            Log.Trace("メインウィンドウの初期化");
-            mainWindow.Initialize();
+            Log.Trace("入力監視ウィンドウの初期化");
+            var window = new RawInputReceiverWindow();
+            window.Input += InputGuardian.OnKeyInput;
+            RawInputDevice.RegisterDevice(
+                HidUsageAndPage.Keyboard,
+                RawInputDeviceFlags.ExInputSink | RawInputDeviceFlags.NoLegacy,
+                window.Handle);
 
-            Log.Trace("デスクトップダブルクリックのフック");
-            MouseEventGuardian.DesktopDoubleClick += (sender, e) =>
-            {
-                MessageBox.Show("デスクトップがダブルクリックされました");
-            };
-
-            Log.Trace("キーペア押下のフック");
-            KeyboardEventGuardian.KeyPairDown += (sender, e) =>
-            {
-                MessageBox.Show("キーペアが押されました");
-            };
+            Log.Trace("入力監視の開始");
+            InputGuardian.ActionEvent += OnActionEvent;
+            InputGuardian.ConsoleEvent += OnConsoleEvent;
 
             Log.IndentDown();
         }
 
-        /// <summary>
-        /// アプリケーションをタスクトレイに常駐させる
-        /// </summary>
-        /// <param name="mainWindow">メインウィンドウ</param>
-        /// <returns>タスクトレイ上のアイコン</returns>
-        private static NotifyIcon ResidesTaskTray(Form1 mainWindow)
-        {
-            Log.IndentUp();
-
-            var notifyIcon = new NotifyIcon();
-            notifyIcon.Icon = SystemIcons.Application;
-            notifyIcon.Text = applicationName;
-            notifyIcon.Visible = true;
-
-            // タスクトレイのアイコンのダブルクリックイベントハンドリング
-            notifyIcon.DoubleClick += (sender, e) =>
-            {
-                mainWindow.Show();
-                mainWindow.ShowInTaskbar = true;
-                mainWindow.WindowState = FormWindowState.Normal;
-            };
-
-            Log.IndentDown();
-            return notifyIcon;
-        }
-
+        
         /// <summary>
         /// 後処理
         /// </summary>
@@ -117,9 +89,34 @@ namespace DualKeyboarder
 
             notifyIcon.Dispose();
             MultiInvocationGuardian.Dispose();
+            RawInputDevice.UnregisterDevice(HidUsageAndPage.Keyboard);
             Log.IndentDown();
 
             Log.Shutdown();
+        }
+
+        /// <summary>
+        /// [ハンドラ]コンソールイベントハンドラ
+        /// </summary>
+        private static void OnConsoleEvent()
+        {
+            Log.IndentUp();
+            Log.Debug("コンソールイベント");
+            Log.IndentDown();
+        }
+
+        /// <summary>
+        /// [ハンドラ]アクションイベントハンドラ
+        /// </summary>
+        /// <param name="e">イベントパラメータ</param>
+        private static void OnActionEvent(ActionEventArgs e)
+        {
+            Log.IndentUp();
+            Log.Debug("アクションイベント");
+            var message = $"KeyboardId:{e.KeyboardId}, ScanCodeKey:{e.ScanCodeKey.ToString("X")}, IsExtention:{e.IsExtention}\n";
+            Log.Debug(message);
+            Debug.Print(message);
+            Log.IndentDown();
         }
     }
 }
